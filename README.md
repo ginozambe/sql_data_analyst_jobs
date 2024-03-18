@@ -1,16 +1,16 @@
 ## Introduction
 
-Dive into the data analytics job market. This project explores top paying roles and in demand skills within the data analytics field, with a particular focus on the UK job market.
+Dive into the data analytics job market. This project explores top-paying roles and in-demand skills within data analytics, focusing on the UK job market.
 
-SQL queires? Check them out here: [project_sql_folder](/project_sql/)
+SQL queries? Check them out here: [project_sql_folder](/project_sql/)
 
 ## 5 Questions answered by the SQL queries
 
-1. Top paying jobs in data analyst?
-3. What skills are required for the top paying data analyst jobs?
-3. Top 25 skills and tools based on best paid Data Analyst salaries in the UK?
+1. Top paying jobs in data analysis?
+3. What skills are required for the top-paying data analyst jobs?
+3. Top 25 skills and tools based on best-paid Data Analyst salaries in the UK?
 4. What are the 5 most in-demand skills for data analysts in the UK?
-5. Optimal skills to learn (highest demand and highest paid skills) when looking for data analysis work in the UK?
+5. What are the best skills to learn (highest demand and highest paid skills) when looking for data analysis work in the UK?
 
 # Tools Used
 
@@ -23,7 +23,7 @@ SQL queires? Check them out here: [project_sql_folder](/project_sql/)
 
 ### Query1
 
-'''sql
+```SQL
 SELECT job_id,
     job_title,
     job_location,
@@ -38,8 +38,9 @@ WHERE job_title_short = 'Data Analyst'
     AND salary_year_avg IS NOT NULL
 ORDER BY salary_year_avg DESC
 LIMIT 10
-'''
-[Analysis](<project_sql/analysis_assets/Screenshot 2024-03-18 152245.png>)
+```
+
+![Analysis](<project_sql/analysis_assets/Screenshot 2024-03-18 152245.png>)
 
 
 
