@@ -1,5 +1,5 @@
 /*
- optimal skills to learn (highest demand and highest paid skills) when looking for remote work
+ optimal skills to learn (highest demand and highest paid skills) when looking for work in the UK
  */
 WITH skills_demand AS (
     SELECT skills_dim.skill_id,
@@ -9,8 +9,8 @@ WITH skills_demand AS (
         INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
         INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
     WHERE job_title_short = 'Data Analyst'
-        AND salary_year_avg IS NOT NULL
-        AND job_work_from_home = TRUE -- AND job_location LIKE '%UK%'
+        AND salary_year_avg IS NOT NULL -- AND job_work_from_home = TRUE 
+        AND job_location LIKE '%UK%'
     GROUP BY skills_dim.skill_id
 ),
 average_salary AS (
@@ -21,8 +21,8 @@ average_salary AS (
         INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
         INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
     WHERE job_title_short = 'Data Analyst'
-        AND salary_year_avg IS NOT NULL
-        AND job_work_from_home = TRUE -- AND job_location LIKE '%UK%'
+        AND salary_year_avg IS NOT NULL -- AND job_work_from_home = TRUE 
+        AND job_location LIKE '%UK%'
     GROUP BY skills_job_dim.skill_id,
         job_location
 )
