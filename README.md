@@ -112,25 +112,33 @@ LIMIT 5
 
 ```SQL
 WITH skills_demand AS (
-    SELECT skills_dim.skill_id,
+    SELECT 
+        skills_dim.skill_id,
         skills_dim.skills,
         COUNT(skills_job_dim.job_id) AS demand_count,
-        ROW_NUMBER() OVER (
-            ORDER BY COUNT(skills_job_dim.job_id) DESC
-        ) AS row_num
-    FROM job_postings_fact
+        ROUND(AVG(job_postings_fact.salary_year_avg), 2) AS rounded_avg_salary,
+        ROW_NUMBER() OVER (ORDER BY COUNT(skills_job_dim.job_id) DESC) AS row_num
+    FROM 
+        job_postings_fact
         INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
         INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
-    WHERE job_title_short = 'Data Analyst'
+    WHERE 
+        job_title_short = 'Data Analyst'
         AND salary_year_avg IS NOT NULL
         AND job_location LIKE '%UK%'
-    GROUP BY skills_dim.skill_id,
+    GROUP BY 
+        skills_dim.skill_id,
         skills_dim.skills
 )
-SELECT skills,
-    demand_count
-FROM skills_demand
-WHERE row_num <= 10
-ORDER BY demand_count DESC;
+SELECT 
+    skills,
+    demand_count,
+    rounded_avg_salary
+FROM 
+    skills_demand
+WHERE 
+    row_num <= 10
+ORDER BY 
+    demand_count DESC;
 ```
-![Analysis](<project_sql/analysis_assets/Screenshot 2024-03-18 160402.png>)
+![Analysis](<project_sql/analysis_assets/Screenshot 2024-03-18 162031.png>)

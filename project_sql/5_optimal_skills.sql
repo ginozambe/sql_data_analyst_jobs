@@ -5,6 +5,7 @@ WITH skills_demand AS (
     SELECT skills_dim.skill_id,
         skills_dim.skills,
         COUNT(skills_job_dim.job_id) AS demand_count,
+        ROUND(AVG(job_postings_fact.salary_year_avg), 2) AS rounded_avg_salary,
         ROW_NUMBER() OVER (
             ORDER BY COUNT(skills_job_dim.job_id) DESC
         ) AS row_num
@@ -18,7 +19,8 @@ WITH skills_demand AS (
         skills_dim.skills
 )
 SELECT skills,
-    demand_count
+    demand_count,
+    rounded_avg_salary
 FROM skills_demand
 WHERE row_num <= 10
 ORDER BY demand_count DESC;
