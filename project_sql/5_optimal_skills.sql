@@ -1,5 +1,5 @@
 /*
- What are the best skills to learn (highest demand and highest paid skills) when looking for data analysis work in the UK?
+ What are the best skills to learn (highest demand and highest paid skills) when looking for a data analyst role in the UK?
  */
 WITH skills_demand AS (
     SELECT skills_dim.skill_id,

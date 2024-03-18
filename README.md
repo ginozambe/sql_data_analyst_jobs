@@ -10,7 +10,7 @@ SQL queries? Check them out here: [project_sql_folder](/project_sql/)
 3. What skills are required for the top-paying data analyst jobs?
 3. Top skills and tools based on best-paid data analyst salaries in the UK?
 4. What are the 5 most in-demand skills for data analysts in the UK?
-5. What are the best skills to learn (highest demand and highest paid skills) when looking for data analysis work in the UK?
+5.  What are the best skills to learn (highest demand and highest paid skills) when looking for a data analyst role in the UK?
 
 # Tools Used
 
