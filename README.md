@@ -39,7 +39,7 @@ ORDER BY salary_year_avg DESC
 LIMIT 10
 ```
 
-![Analysis](<project_sql/analysis_assets/Screenshot 2024-03-18 152245.png>)
+![Analysis](<project_sql/analysis_assets/Screenshot 2024-03-18 154857.png>)
 
 ### Query2
 
