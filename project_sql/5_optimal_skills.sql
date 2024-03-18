@@ -1,5 +1,5 @@
 /*
- optimal skills to learn (highest demand and highest paid skills) when looking for work in the UK
+ optimal skills to learn (highest demand and highest paid skills) when looking for work in the UK?
  */
 WITH skills_demand AS (
     SELECT skills_dim.skill_id,
