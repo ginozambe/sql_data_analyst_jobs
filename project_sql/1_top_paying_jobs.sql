@@ -1,5 +1,5 @@
 /*
- Top paying jobs in data analyst?
+ Top paying jobs in data analysis?
  */
 SELECT job_id,
     job_title,

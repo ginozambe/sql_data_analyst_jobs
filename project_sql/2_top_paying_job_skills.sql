@@ -1,5 +1,5 @@
 /*
- What skills are required for the top paying data analyst jobs?
+ What skills are required for the top-paying data analyst jobs?
  */
 WITH top_paying_jobs AS (
     SELECT job_id,
