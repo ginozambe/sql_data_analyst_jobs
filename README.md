@@ -8,7 +8,7 @@ SQL queries? Check them out here: [project_sql_folder](/project_sql/)
 
 1. Top paying jobs in data analysis?
 3. What skills are required for the top-paying data analyst jobs?
-3. Top 25 skills and tools based on best-paid Data Analyst salaries in the UK?
+3. Top skills and tools based on best-paid Data Analyst salaries in the UK?
 4. What are the 5 most in-demand skills for data analysts in the UK?
 5. What are the best skills to learn (highest demand and highest paid skills) when looking for data analysis work in the UK?
 
@@ -92,5 +92,18 @@ LIMIT 25
 ```
 ![Analysis](<project_sql/analysis_assets/Screenshot 2024-03-18 155544.png>)
 
+### Query4
 
-
+```SQL
+SELECT skills,
+    COUNT(skills_job_dim.job_id) AS demand_count
+FROM job_postings_fact
+    INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+    INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+WHERE job_title_short = 'Data Analyst'
+    AND job_location LIKE '%UK%'
+GROUP BY skills
+ORDER BY demand_count DESC
+LIMIT 5
+```
+![Analysis](<project_sql/analysis_assets/Screenshot 2024-03-18 155858.png>)

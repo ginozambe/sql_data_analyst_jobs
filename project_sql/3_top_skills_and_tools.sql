@@ -1,5 +1,5 @@
 /*
- Top 25 skills and tools based on best-paid Data Analyst salaries in the UK?
+ Top skills and tools based on best-paid Data Analyst salaries in the UK?
  */
 SELECT skills,
     job_location,
