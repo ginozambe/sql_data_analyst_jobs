@@ -20,5 +20,5 @@ WITH skills_demand AS (
 SELECT skills,
     demand_count
 FROM skills_demand
-WHERE row_num <= 5
+WHERE row_num <= 10
 ORDER BY demand_count DESC;
